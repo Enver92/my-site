@@ -1,0 +1,36 @@
+{% extends 'snippets/base.html' %}
+
+{% block title %}Contacts | {{ block.super }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <table class="table borderless">
+                <!-- Phone -->
+                <tr>
+                  <td><i class="fa fa-phone-square fa-2x"></td>
+                  <td><a href="tel:+3-8093-129-36-44">+38-093-129-36-44</a></td>
+                </tr>
+
+                <!-- email -->
+                <tr>
+                  <td><i class="fa fa-envelope fa-2x"></td>
+                  <td><a href="mailto:enverablaiev@gmail.com">enverablaiev@gmail.com</a></td>
+                </tr>
+
+                <!-- linkedin -->
+                <tr>
+                  <td><i class="fa fa-linkedin fa-2x"></td>
+                  <td><a href="https://linkedin.com/in/enverablaiev">linkedin.com/in/enverablaiev</a></td>
+                </tr>
+
+                <!-- github -->
+                <tr>
+                  <td><i class="fa fa-github fa-2x"></td>
+                  <td><a href="https://linkedin.com/in/enverablaiev">github.com/Enver92</a></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}
