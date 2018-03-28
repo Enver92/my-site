@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Tag( models.Model):
@@ -26,4 +27,4 @@ class Post(models.Model):
         """
         Returns the url to access a detail record for this post.
         """
-        return reverse('book-detail', args=[str(self.id)])
+        return reverse('blog:post-detail', args=[str(self.id)])

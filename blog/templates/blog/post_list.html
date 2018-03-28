@@ -1,0 +1,45 @@
+{% extends "snippets/base.html" %}
+
+{% block title %}Blog | {{ block.super }}{% endblock %}
+
+<div class="container">
+    {% block content %}
+        <!-- {% for post in post_list %}
+            <h1>{{ post.title }}</h1>
+        {% empty %}
+            <h1>No articles to display.</h1>
+        {% endfor %} -->
+
+        {% for post in posts %}
+		<article itemscope itemtype="http://schema.org/Article" class='mb-4'>
+			<header itemprop="name">
+				<a href="{{ post.get_absolute_url }}">
+					<h1>{{ post.title }}</h1>
+				</a>
+			</header>
+            <p>{% for tag in post.tag.all %}<span class="badge badge-secondary mr-2">{{ tag }}</span>{% endfor %}</p>
+
+			<p class="publish-data">
+				Posted on
+				<time itemprop="datePublished" datetime="{{ post.timestamp|date:'Y-m-d H:i:s' }}">
+					{{ post.timestamp }}
+				</time>
+
+			</p>
+
+			<span itemprop="articleBody">{{ post.content|truncatechars:20  }}</span>
+
+			<footer>
+				<a class="button right" href="#">Read more</a>
+				
+			</footer>
+    		</article>
+        {% endfor %}
+
+    {% endblock %}
+
+</div>
+
+
+
+</div>
